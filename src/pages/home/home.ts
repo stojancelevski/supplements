@@ -28,4 +28,8 @@ export class HomePage {
     this.api.query = this.query;
     this.navCtrl.push('SearchpagePage');
   }
+  press()
+  {
+    console.log('HARDER DADDY!')
+  }
 }
