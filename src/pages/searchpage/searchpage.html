@@ -14,10 +14,9 @@
 
 
 <ion-content padding>
-  <div
-
-  >
-
+  <div *ngFor="let item of recipes" >
+    <img src="{{item.image_url}}" #myImage (click)="presentImage(myImage)"><br>
+    {{item.title}}
   </div>
 
 </ion-content>
