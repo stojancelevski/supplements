@@ -37,24 +37,11 @@ export class SearchpagePage {
       let jsonRecipes= this.data.recipes;
       this.recipes = jsonRecipes;
       console.log(this.recipes);
-
-      /*let recipes:Array<Recipe> = this.data.map((data) => new Recipe(
-        data.publisher,
-        data.f2f_url,
-        data.title,
-        data.source_url,
-        data.recipe_id,
-        data.image_url,
-        data.social_rank,
-        data.publisher_url
-      )
-      )*/
-     // console.log(recipes);
       loader.dismiss();
     }
     ).catch(err => {
       console.log(err);
-      loader.dismiss();
+      loader.data;
     });
 
   }
