@@ -1,12 +1,9 @@
-import { ApiProvider } from './../../providers/api/api';
-
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams} from 'ionic-angular';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { LoadingController } from 'ionic-angular';
-
-
+import { ApiProvider } from './../../providers/api/api';
 /**
- * Generated class for the SearchpagePage page.
+ * Generated class for the SearchPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -14,15 +11,14 @@ import { LoadingController } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-searchpage',
-  templateUrl: 'searchpage.html',
+  selector: 'page-search',
+  templateUrl: 'search.html',
 })
-export class SearchpagePage {
-
+export class SearchPage {
   data: any;
   recipes : Array<Recipe>;
   constructor(public navCtrl: NavController, public navParams: NavParams, public api: ApiProvider,
-  private loading: LoadingController) {
+              private loading: LoadingController) {
   }
 
   ionViewDidLoad() {
@@ -32,19 +28,18 @@ export class SearchpagePage {
     });
     loader.present();
     this.api.searchApi().then(data =>
-    {
-      this.data = data;
-      let jsonRecipes= this.data.recipes;
-      this.recipes = jsonRecipes;
-      console.log(this.recipes);
-      loader.dismiss();
-    }
+      {
+        this.data = data;
+        let jsonRecipes= this.data.recipes;
+        this.recipes = jsonRecipes;
+        console.log(this.recipes);
+        loader.dismiss();
+      }
     ).catch(err => {
       console.log(err);
       loader.data;
     });
 
   }
-
 
 }

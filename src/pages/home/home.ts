@@ -26,7 +26,7 @@ export class HomePage {
   {
     console.log('clicked');
     this.api.query = this.query;
-    this.navCtrl.push('SearchpagePage');
+    this.navCtrl.push('SearchPage');
   }
   press()
   {
