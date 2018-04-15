@@ -14,9 +14,13 @@
 
 
 <ion-content padding>
-  <div *ngFor="let item of recipes" >
-    <img src="{{item.image_url}}" #myImage (click)="presentImage(myImage)"><br>
-    {{item.title}}
-  </div>
+  <ion-grid>
+    <ion-row>
+      <ion-col *ngFor="let item of recipes" col-6>
+          <img src="{{item.image_url}}"><br>
+          {{item.title}}
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
 </ion-content>
