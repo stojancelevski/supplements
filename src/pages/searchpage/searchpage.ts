@@ -34,9 +34,9 @@ export class SearchpagePage {
     this.api.searchApi().then(data =>
     {
       this.data = data;
-      let jsonRecipes= this.data.recipes;  
+      let jsonRecipes= this.data.recipes;
       this.recipes = jsonRecipes;
-      console.log(this.recipes[0]);
+      console.log(this.recipes);
 
       /*let recipes:Array<Recipe> = this.data.map((data) => new Recipe(
         data.publisher,
@@ -58,6 +58,6 @@ export class SearchpagePage {
     });
 
   }
-  
+
 
 }
