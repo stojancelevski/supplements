@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {IonicPage, MenuController, NavController, NavParams} from 'ionic-angular';
 import { ApiProvider } from './../../providers/api/api';
 
 /**
@@ -16,11 +16,17 @@ import { ApiProvider } from './../../providers/api/api';
 })
 export class HomePage {
   query: string;
-  constructor(public navCtrl: NavController, public navParams: NavParams, public api: ApiProvider) {
+  constructor(public navCtrl: NavController,
+              public navParams: NavParams,
+              public api: ApiProvider,
+              public menuctrl:MenuController
+  ) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad HomePage');
+      this.menuctrl.enable(true,"menu");
+
   }
   search()
   {

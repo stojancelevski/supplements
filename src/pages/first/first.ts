@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {IonicPage, MenuController, NavController, NavParams} from 'ionic-angular';
 
 /**
  * Generated class for the FirstPage page.
@@ -15,11 +15,17 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class FirstPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController,
+              public navParams: NavParams,
+              public menuCtrl: MenuController,
+
+  ) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad FirstPage');
+      this.menuCtrl.enable(false,"menu");
+
   }
   register(){
     this.navCtrl.push('RegisterPage');

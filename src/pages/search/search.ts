@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {IonicPage, MenuController, NavController, NavParams} from 'ionic-angular';
 import { LoadingController } from 'ionic-angular';
 import { ApiProvider } from './../../providers/api/api';
 /**
@@ -17,12 +17,17 @@ import { ApiProvider } from './../../providers/api/api';
 export class SearchPage {
   data: any;
   recipes : Array<Recipe>;
-  constructor(public navCtrl: NavController, public navParams: NavParams, public api: ApiProvider,
-              private loading: LoadingController) {
+  constructor(public navCtrl: NavController,
+              public navParams: NavParams,
+              public api: ApiProvider,
+              private loading: LoadingController,
+              public menuctrl:MenuController
+  ) {
   }
 
   ionViewDidLoad() {
-    let loader = this.loading.create({
+      this.menuctrl.enable(false,"menu");
+      let loader = this.loading.create({
       content: "Please wait",
       duration: 5000
     });

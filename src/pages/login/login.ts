@@ -1,5 +1,5 @@
 import { Component,ViewChild } from '@angular/core';
-import {IonicPage, NavController, NavParams, AlertController, ToastController, LoadingController} from 'ionic-angular';
+import {IonicPage, NavController, NavParams, MenuController,AlertController, ToastController, LoadingController} from 'ionic-angular';
 import { AngularFireAuth } from 'angularfire2/auth';
 import {Storage} from "@ionic/storage";
 
@@ -20,11 +20,21 @@ export class LoginPage {
   @ViewChild('username') user;
   @ViewChild('password') password;
 
-  constructor(public toastCtrl: ToastController,private storage: Storage,public loadingCtrl:LoadingController,private alertCtrl: AlertController, private fire:AngularFireAuth,public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public toastCtrl: ToastController,
+              private storage: Storage,
+              public loadingCtrl:LoadingController,
+              private alertCtrl: AlertController,
+              private fire:AngularFireAuth,
+              public navCtrl: NavController,
+              public navParams: NavParams,
+              public menuCtrl: MenuController,
+
+  ) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
+      this.menuCtrl.enable(false,"menu");
   }
 
   alert(message: string) {
