@@ -16,12 +16,10 @@
 <ion-content padding>
   <ion-grid>
     <ion-row>
-      <div>
         <ion-col *ngFor="let item of recipes" col-6 >
           <img src="{{item.image_url}}"><br>
           {{item.title}}
         </ion-col>
-      </div>
     </ion-row>
   </ion-grid>
 </ion-content>

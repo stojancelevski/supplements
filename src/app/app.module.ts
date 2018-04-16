@@ -8,7 +8,18 @@ import { MyApp } from './app.component';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { IonicStorageModule } from '@ionic/storage';
 
+const firebaseAuth = {
+  apiKey: "AIzaSyDG8jasoPtq0lxVsl70hJ4TBG1aYMo7kT4",
+    authDomain: "codefest-b72e1.firebaseapp.com",
+  databaseURL: "https://codefest-b72e1.firebaseio.com",
+  projectId: "codefest-b72e1",
+  storageBucket: "codefest-b72e1.appspot.com",
+  messagingSenderId: "52186270167"
+};
 
 @NgModule({
   declarations: [
@@ -19,6 +30,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     BrowserModule,
     HttpClientModule,
     IonicModule.forRoot(MyApp),
+    AngularFireModule.initializeApp(firebaseAuth),
+    AngularFireAuthModule,
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
