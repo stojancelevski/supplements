@@ -7,4 +7,5 @@ interface Recipe{
     image_url: string;
     social_rank: number;
     publisher_url: string;
+    ingredients: Array<string>;
 }

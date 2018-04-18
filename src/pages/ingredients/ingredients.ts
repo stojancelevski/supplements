@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
- * Generated class for the RecipePage page.
+ * Generated class for the IngredientsPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -11,21 +11,27 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-recipe',
-  templateUrl: 'recipe.html',
+  selector: 'page-ingredients',
+  templateUrl: 'ingredients.html',
 })
-export class RecipePage {
+export class IngredientsPage {
   recipe: Recipe;
+  data: any;
   constructor(public navCtrl: NavController, public navParams: NavParams, public api: ApiProvider) {
   }
 
   ionViewDidLoad() {
-    this.recipe = this.navParams.get('recipe');
-  }
-  ingredients()
-  {
-    this.api.recipeId = this.recipe.recipe_id;
-    this.navCtrl.push('IngredientsPage');
+    console.log('ionViewDidLoad IngredientsPage');
+    this.api.getIngredients().then(
+      data =>{
+        this.data = data;
+        let jsonRecipe = this.data;
+        this.recipe = jsonRecipe;
+        console.log(this.recipe);
+    },
+      err =>{
+    console.log(err);
+  })
   }
 
 }

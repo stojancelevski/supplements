@@ -10,7 +10,9 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class ApiProvider {
   url = "http://food2fork.com/api/search?key=997dbcaae9b68d59fc4f9d43991a7926&q=";
-  query : string; 
+  recipeurl = "http://food2fork.com/api/get?key=997dbcaae9b68d59fc4f9d43991a7926&rId=";
+  query: string; 
+  recipeId: string;
   constructor(public http: HttpClient) {
     console.log('Hello ApiProvider Provider');
   }
@@ -29,4 +31,24 @@ export class ApiProvider {
     )
   });
   }
+  getIngredients()
+  {
+    console.log(this.recipeurl + this.recipeId);
+    return new Promise((resolve, reject) =>
+  {
+    this.http.get(this.recipeurl + this.recipeId).subscribe(
+      data =>
+      {
+        resolve(data);
+      },
+      err =>
+      {
+        reject(err);
+      }
+    )
+  });
+  }
+
+
+
 }

@@ -17,7 +17,7 @@
   <ion-grid>
     <ion-row>
         <ion-col *ngFor="let item of recipes" col-6 >
-          <ion-item  (press) = "longPress();">
+          <ion-item  (click) = "getRecipe(item);">
               <img src="{{item.image_url}}"><br>
               {{item.title}}
           </ion-item>

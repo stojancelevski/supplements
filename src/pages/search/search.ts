@@ -25,9 +25,9 @@ export class SearchPage {
   ) {
   }
 
-  longPress()
+  getRecipe(recipe)
   {
-    console.log('Pressed');
+    this.navCtrl.push('RecipePage',{'recipe':recipe})
   }
   ionViewDidLoad() {
       this.menuctrl.enable(false,"menu");
