@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {IonicPage, MenuController, NavController, NavParams} from 'ionic-angular';
+import { IonicPage, NavController, NavParams, MenuController } from 'ionic-angular';
 import { ApiProvider } from './../../providers/api/api';
 
 /**
@@ -16,26 +16,18 @@ import { ApiProvider } from './../../providers/api/api';
 })
 export class HomePage {
   query: string;
-  constructor(public navCtrl: NavController,
-              public navParams: NavParams,
-              public api: ApiProvider,
-              public menuctrl:MenuController
-  ) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+    public api: ApiProvider, public menuCtrl: MenuController) {
   }
 
   ionViewDidLoad() {
+    this.menuCtrl.enable(true,'sidemenu');
     console.log('ionViewDidLoad HomePage');
-      this.menuctrl.enable(true,"menu");
-
   }
   search()
   {
     console.log('clicked');
     this.api.query = this.query;
     this.navCtrl.push('SearchPage');
-  }
-  press()
-  {
-    console.log('HARDER DADDY!')
   }
 }

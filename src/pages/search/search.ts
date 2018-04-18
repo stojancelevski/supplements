@@ -25,6 +25,10 @@ export class SearchPage {
   ) {
   }
 
+  longPress()
+  {
+    console.log('Pressed');
+  }
   ionViewDidLoad() {
       this.menuctrl.enable(false,"menu");
       let loader = this.loading.create({

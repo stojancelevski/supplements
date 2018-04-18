@@ -17,8 +17,10 @@
   <ion-grid>
     <ion-row>
         <ion-col *ngFor="let item of recipes" col-6 >
-          <img src="{{item.image_url}}"><br>
-          {{item.title}}
+          <ion-item  (press) = "longPress();">
+              <img src="{{item.image_url}}"><br>
+              {{item.title}}
+          </ion-item>
         </ion-col>
     </ion-row>
   </ion-grid>
