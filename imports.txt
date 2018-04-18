@@ -1,0 +1,19 @@
+ionic cordova plugin add cordova-sqlite-storage
+npm install --save @ionic/storage
+
+	
+
+API KEY MAPS
+AIzaSyClom9swe9VuLwuwKHfSyOnqSPRfWnCVt0
+
+
+link sho mozda mojt da ti pomozit
+https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522,151.1957362&radius=1500&type=restaurant&keyword=cruise&key=YOUR_API_KEY
+type i keyword da se nagodet za marketi da izlezet
+
+
+ush eden link za pomosh
+https://developers.google.com/places/web-service/search
+
+ionic cordova plugin add uk.co.workingedge.phonegap.plugin.launchnavigator
+npm install --save @ionic-native/launch-navigator
