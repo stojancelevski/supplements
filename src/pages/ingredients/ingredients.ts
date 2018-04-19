@@ -1,6 +1,6 @@
 import { ApiProvider } from './../../providers/api/api';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {IonicPage, MenuController, NavController, NavParams} from 'ionic-angular';
 
 /**
  * Generated class for the IngredientsPage page.
@@ -17,11 +17,13 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 export class IngredientsPage {
   recipe: Recipe;
   data: any;
-  constructor(public navCtrl: NavController, public navParams: NavParams, public api: ApiProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public api: ApiProvider,public menuCtrl: MenuController) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad IngredientsPage');
+      this.menuCtrl.enable(true,'sidemenu');
+
+      console.log('ionViewDidLoad IngredientsPage');
     this.api.getIngredients().then(
       data =>{
         this.data = data;

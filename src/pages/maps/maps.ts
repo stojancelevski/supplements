@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {IonicPage, MenuController, NavController, NavParams} from 'ionic-angular';
 
 /**
  * Generated class for the MapsPage page.
@@ -16,11 +16,12 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 export class MapsPage {
 
   apikey: 'AIzaSyClom9swe9VuLwuwKHfSyOnqSPRfWnCVt0';
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public menuCtrl: MenuController) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad MapsPage');
+      this.menuCtrl.enable(false,"sidemenu");
+      console.log('ionViewDidLoad MapsPage');
   }
 
 }

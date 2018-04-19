@@ -21,7 +21,7 @@ export class SearchPage {
               public navParams: NavParams,
               public api: ApiProvider,
               private loading: LoadingController,
-              public menuctrl:MenuController
+              public menuCtrl:MenuController
   ) {
   }
 
@@ -30,7 +30,7 @@ export class SearchPage {
     this.navCtrl.push('RecipePage',{'recipe':recipe})
   }
   ionViewDidLoad() {
-      this.menuctrl.enable(false,"menu");
+      this.menuCtrl.enable(true,"sidemenu");
       let loader = this.loading.create({
       content: "Please wait",
       duration: 5000
