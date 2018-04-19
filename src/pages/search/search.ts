@@ -22,12 +22,9 @@ export class SearchPage {
               public navParams: NavParams,
               public api: ApiProvider,
               private loading: LoadingController,
-<<<<<<< HEAD
-              public menuCtrl:MenuController
-=======
-              public menuctrl:MenuController,
+              public menuCtrl:MenuController,
               public storage: Storage
->>>>>>> 0285bb61e140b8ce255378bb686545a7e984246c
+
   ) {
   }
 
