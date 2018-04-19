@@ -15,4 +15,13 @@
   <ion-item>
     <button ion-button block (click) ='search();'>Search</button>
   </ion-item>
+  <ion-grid>
+    <ion-row>
+        <ion-col *ngFor="let item of lastFive" col-6 >
+          <button ion-button block (click) = "showModal(item);">
+              {{item.title}}
+          </button>
+        </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
