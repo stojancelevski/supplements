@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {IonicPage, MenuController, NavController, NavParams} from 'ionic-angular';
+import { IonicPage, MenuController, NavController, NavParams} from 'ionic-angular';
 import { LoadingController } from 'ionic-angular';
 import { ApiProvider } from './../../providers/api/api';
 import {Storage} from "@ionic/storage";
@@ -106,7 +106,6 @@ export class SearchPage {
           this.storage.set('lastfive',recipe_id + ';' + lastFiveString);
         }
       }
-      
     }
   })
 }
