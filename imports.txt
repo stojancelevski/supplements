@@ -17,3 +17,13 @@ https://developers.google.com/places/web-service/search
 
 ionic cordova plugin add uk.co.workingedge.phonegap.plugin.launchnavigator
 npm install --save @ionic-native/launch-navigator
+
+INEX GORICA (Codefest Market 1)
+41.0846° N, 20.7972° E
+
+UIST st.Paul the Apostle (Codefest Market 2)
+41.1131° N, 20.8025° E
+
+Biljanini Izvori(Codefest Market 3)
+41.1097° N, 20.8151° E
+
