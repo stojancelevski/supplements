@@ -25,7 +25,8 @@ export class MyApp {
         // used for an example of ngFor and navigation
         this.pages = [
             {title: 'Home', component: 'HomePage'},
-            {title: 'Logout', component: 'FirstPage'}
+            {title: 'Logout', component: 'FirstPage'},
+            {title: 'Maps', component: 'MapsPage'}
 
         ];
         storage.get('testApp.userId').then((val) => {

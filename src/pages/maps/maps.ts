@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
-import {IonicPage, MenuController, NavController, NavParams} from 'ionic-angular';
+import { LaunchNavigator, LaunchNavigatorOptions } from '@ionic-native/launch-navigator';
+import { Component,ViewChild,ElementRef } from '@angular/core';
+import { IonicPage, MenuController, NavController, NavParams, Platform } from 'ionic-angular';
+import { Geolocation } from '@ionic-native/geolocation';
 
 /**
  * Generated class for the MapsPage page.
@@ -7,20 +9,62 @@ import {IonicPage, MenuController, NavController, NavParams} from 'ionic-angular
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-
+declare var google: any;
 @IonicPage()
 @Component({
   selector: 'page-maps',
   templateUrl: 'maps.html',
 })
 export class MapsPage {
-
-  apikey: 'AIzaSyClom9swe9VuLwuwKHfSyOnqSPRfWnCVt0';
-  constructor(public navCtrl: NavController, public navParams: NavParams, public menuCtrl: MenuController) {
+  @ViewChild('map') mapElement: ElementRef;
+  map: any;
+  markers = [];
+  constructor(public navCtrl: NavController, public navParams: NavParams, public menuCtrl: MenuController,
+  public platform: Platform, public geolocation: Geolocation) {
   }
-
+  initMap()
+  {
+    this.geolocation.getCurrentPosition({maximumAge: 3000,timeout:5000,enableHighAccuracy: true}).then(
+      (resp)=>{
+        let mylocation = new google.maps.LatLng(resp.coords.latitude,resp.coords.longitude);
+      
+    let mapOptions = {
+      center: mylocation,
+      zoom: 15,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    }
+ 
+    this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
+      });
+ 
+  }
+  addMarker(location, image) {
+    let marker = new google.maps.Marker({
+      position: location,
+      map: this.map,
+      icon: image
+    });
+    this.markers.push(marker);
+  }
+  
+  setMapOnAll(map) {
+    for (var i = 0; i < this.markers.length; i++) {
+      this.markers[i].setMap(map);
+    }
+  }
+  
+  clearMarkers() {
+    this.setMapOnAll(null);
+  }
+  
+  deleteMarkers() {
+    this.clearMarkers();
+    this.markers = [];
+  }
   ionViewDidLoad() {
-      this.menuCtrl.enable(false,"sidemenu");
+     
+      this.menuCtrl.enable(true,'sidemenu');
+      this.initMap();
       console.log('ionViewDidLoad MapsPage');
   }
 
