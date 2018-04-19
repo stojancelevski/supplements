@@ -24,7 +24,7 @@ export class FirstPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad FirstPage');
-      this.menuCtrl.enable(false,"menu");
+      this.menuCtrl.enable(false,"sidemenu");
 
   }
   register(){

@@ -23,7 +23,7 @@ export class RegisterPage {
               public navCtrl: NavController,
               public navParams: NavParams,
               public toastCtrl: ToastController,
-              public menuctrl:MenuController,
+              public menuCtrl:MenuController,
               public loadCtrl:LoadingController,
   ) {
 
@@ -31,7 +31,8 @@ export class RegisterPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad RegisterPage');
-    this.menuctrl.enable(false,"menu");
+      this.menuCtrl.enable(false,'sidemenu');
+
   }
 
   alert(message: string) {

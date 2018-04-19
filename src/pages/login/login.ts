@@ -34,7 +34,7 @@ export class LoginPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
-      this.menuCtrl.enable(false,"menu");
+      this.menuCtrl.enable(false,"sidemenu");
   }
 
   alert(message: string) {
