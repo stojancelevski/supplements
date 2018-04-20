@@ -28,12 +28,16 @@ export class IngredientsPage {
       data =>{
         this.data = data;
         let jsonRecipe = this.data;
-        this.recipe = jsonRecipe;
+        this.recipe = jsonRecipe.recipe;
         console.log(this.recipe);
     },
       err =>{
     console.log(err);
   })
+  }
+  showOnMap()
+  {
+    this.navCtrl.push('SuperMarketsPage',{ingredients: this.recipe.ingredients})
   }
 
 }
