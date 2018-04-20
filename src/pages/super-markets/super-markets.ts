@@ -20,7 +20,7 @@ export class SuperMarketsPage {
     ingredients: [
     'chicken breasts',
     'jalapenos',
-    'cheese',
+    'cream cheese',
     'bacon',
     'cheddar cheese',
     'Garlic',
@@ -29,7 +29,9 @@ export class SuperMarketsPage {
     'Olive Oil',
     'chicken thighs',
     'chicken legs',
-    'chicken wings'
+    'chicken wings',
+        'salt'
+
   ],
     name: 'Codefest Market 1',
     lat: '41.0846',
