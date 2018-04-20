@@ -18,7 +18,6 @@ declare var google: any;
 export class MapsPage {
   @ViewChild('map') mapElement: ElementRef;
   map: any;
-  markers = [];
   constructor(public navCtrl: NavController, public navParams: NavParams, public menuCtrl: MenuController,
   public platform: Platform, public geolocation: Geolocation) {
   }
@@ -51,23 +50,7 @@ export class MapsPage {
   }
     
 
-  
-  setMapOnAll(map) {
-    for (var i = 0; i < this.markers.length; i++) {
-      this.markers[i].setMap(map);
-    }
-  }
-  
-  clearMarkers() {
-    this.setMapOnAll(null);
-  }
-  
-  deleteMarkers() {
-    this.clearMarkers();
-    this.markers = [];
-  }
   ionViewDidLoad() {
-     
       this.menuCtrl.enable(true,'sidemenu');
       this.initMap();
       console.log('ionViewDidLoad MapsPage');
