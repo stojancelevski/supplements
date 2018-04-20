@@ -27,25 +27,30 @@ export class MapsPage {
     this.geolocation.getCurrentPosition({maximumAge: 3000,timeout:5000,enableHighAccuracy: true}).then(
       (resp)=>{
         let mylocation = new google.maps.LatLng(resp.coords.latitude,resp.coords.longitude);
-      
+
     let mapOptions = {
       center: mylocation,
       zoom: 15,
-      mapTypeId: google.maps.MapTypeId.ROADMAP
     }
- 
     this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
+      }).then(()=>{
+        let marker = new google.maps.Marker({
+          position:  new google.maps.LatLng('41.0846','20.7972'),
+          map: this.map
+        });
+        let marker2 = new google.maps.Marker({
+          position:  new google.maps.LatLng('41.1131','20.8025'),
+          map: this.map
+        });
+        let marker3 = new google.maps.Marker({
+          position:  new google.maps.LatLng('41.1097','20.8151'),
+          map: this.map
+        });
       });
- 
+      
   }
-  addMarker(location, image) {
-    let marker = new google.maps.Marker({
-      position: location,
-      map: this.map,
-      icon: image
-    });
-    this.markers.push(marker);
-  }
+    
+
   
   setMapOnAll(map) {
     for (var i = 0; i < this.markers.length; i++) {
