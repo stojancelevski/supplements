@@ -16,10 +16,13 @@ import {IonicPage, MenuController, NavController, NavParams} from 'ionic-angular
 })
 export class IngredientsPage {
   recipe: Recipe;
-  data: any;
+  ingredients: any;
   constructor(public navCtrl: NavController, public navParams: NavParams, public api: ApiProvider,public menuCtrl: MenuController) {
   }
+  ionViewDidLoad()
+  {
 
+<<<<<<< HEAD
     ionViewCanEnter() {
       this.menuCtrl.enable(true,'sidemenu');
 
@@ -34,7 +37,17 @@ export class IngredientsPage {
       err =>{
     console.log(err);
   })
+=======
+    this.menuCtrl.enable(true,'sidemenu');
+    console.log('ionViewDidLoad IngredientsPage');
+>>>>>>> fc9a40695b102cdf84a184b3b4dfc4e1f4d21f98
   }
+
+  ionViewCanEnter() {
+    let recipe = this.navParams.get('recipe');
+    this.recipe = recipe.recipe;
+    this.ingredients = this.recipe.ingredients;
+    }
   showOnMap()
   {
     this.navCtrl.push('SuperMarketsPage',{ingredients: this.recipe.ingredients})

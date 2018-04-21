@@ -18,6 +18,17 @@ export class RecipePage {
   recipe: Recipe;
   constructor(public navCtrl: NavController, public navParams: NavParams, public api: ApiProvider, public menuCtrl: MenuController) {
   }
+<<<<<<< HEAD
+=======
+    ionViewCanEnter()
+    {
+        let myrecipe = this.navParams.get('recipe');
+        this.recipe =myrecipe;
+    }
+    ionViewDidLoad() {
+        console.log(this.recipe);
+    }
+>>>>>>> fc9a40695b102cdf84a184b3b4dfc4e1f4d21f98
 
     ionViewCanEnter() {
       this.menuCtrl.enable(true,'sidemenu');
@@ -27,7 +38,15 @@ export class RecipePage {
   ingredients()
   {
     this.api.recipeId = this.recipe.recipe_id;
-    this.navCtrl.push('IngredientsPage');
+    this.api.getIngredients().then(data => {
+      let recipeWithIngredients = data;
+      this.navCtrl.push('IngredientsPage',{recipe: recipeWithIngredients});
+    },
+    err => {
+      console.log(err);
+    }
+  )
+
   }
 
 }
