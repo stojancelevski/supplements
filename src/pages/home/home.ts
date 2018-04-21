@@ -79,7 +79,7 @@ export class HomePage {
 
   showModal(recipe)
   {
-    let modal = this.modalCtrl.create('RecipeModalPage',{recipe: recipe});
+    let modal = this.modalCtrl.create('RecipeModalPage',{'recipe': recipe});
     modal.present();
   }
 

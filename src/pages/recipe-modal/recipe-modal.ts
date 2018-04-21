@@ -14,6 +14,7 @@ import {IonicPage, NavController, NavParams} from 'ionic-angular';
     templateUrl: 'recipe-modal.html',
 })
 export class RecipeModalPage {
+<<<<<<< HEAD
     recipe: Recipe;
 
     constructor(public navCtrl: NavController, public navParams: NavParams) {
@@ -21,6 +22,17 @@ export class RecipeModalPage {
 
         console.log('nla', this.navParams.get('recipe'));
         console.log(this.recipe.title);
+=======
+  recipe: Recipe;
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  }
+  ionViewCanEnter()
+  {
+    let myrecipe = this.navParams.get('recipe');
+    this.recipe =myrecipe.recipe;
+  }
+  ionViewDidLoad() {
+>>>>>>> 626717be7dc014b2fead340434b6de577feb0a01
     }
 
 
