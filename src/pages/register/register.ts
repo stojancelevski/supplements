@@ -58,7 +58,7 @@ export class RegisterPage {
       .then(data => {
 
           this.displayToast('Registered! Go and login now!');
-          this.navCtrl.setRoot('SigninPage');
+          this.navCtrl.setRoot('LoginPage');
           cdr.dismiss();
         }
       )
