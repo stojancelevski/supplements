@@ -32,17 +32,29 @@ export class MapsPage {
       zoom: 15,
     }
     this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
+    let locationMarker = new google.maps.Marker({
+      position: new google.maps.LatLng(resp.coords.latitude,resp.coords.longitude),
+      title: 'My location',
+      icon: {
+        path: google.maps.SymbolPath.CIRCLE,
+        scale: 5
+      },
+      map: this.map
+    })
       }).then(()=>{
         let marker = new google.maps.Marker({
           position:  new google.maps.LatLng('41.0846','20.7972'),
+          title: 'Codefest Market 1',
           map: this.map
         });
         let marker2 = new google.maps.Marker({
           position:  new google.maps.LatLng('41.1131','20.8025'),
+          title: 'Codefest Market 2',
           map: this.map
         });
         let marker3 = new google.maps.Marker({
           position:  new google.maps.LatLng('41.1097','20.8151'),
+          title: 'Codefest Market 3',
           map: this.map
         });
       });
