@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {IonicPage, NavController, NavParams} from 'ionic-angular';
+import {ApiProvider} from "../../providers/api/api";
 
 /**
  * Generated class for the RecipeModalPage page.
@@ -16,7 +17,7 @@ import {IonicPage, NavController, NavParams} from 'ionic-angular';
 export class RecipeModalPage {
 
     recipe: Recipe;
-    constructor(public navCtrl: NavController, public navParams: NavParams) {
+    constructor(public navCtrl: NavController, public navParams: NavParams,public api: ApiProvider) {
     }
     ionViewCanEnter()
     {
@@ -24,6 +25,19 @@ export class RecipeModalPage {
         this.recipe =myrecipe.recipe;
     }
     ionViewDidLoad() {
+
+    }
+    ingredients()
+    {
+        this.api.recipeId = this.recipe.recipe_id;
+        this.api.getIngredients().then(data => {
+                let recipeWithIngredients = data;
+                this.navCtrl.push('IngredientsPage',{recipe: recipeWithIngredients});
+            },
+            err => {
+                console.log(err);
+            }
+        )
 
     }
 

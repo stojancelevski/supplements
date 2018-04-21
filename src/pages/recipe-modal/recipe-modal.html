@@ -14,34 +14,33 @@
         <ion-item>
 
             <h2>{{recipe.title}}</h2>
-            <p>{{recipe.publisher}}</p>
+            <p></p>
 
         </ion-item>
 
         <img src="{{recipe.image_url}}">
 
-        <ion-card-content>
-            <p>Wait a minute. Wait a minute, Doc. Uhhh... Are you telling me that you built a time machine... out of a
-                DeLorean?! Whoa. This is heavy.</p>
-        </ion-card-content>
 
         <ion-row>
             <ion-col>
                 <button ion-button icon-left clear small>
-                    <ion-icon name="thumbs-up"></ion-icon>
-                    <div>12 Likes</div>
+                    <ion-icon name="md-star"></ion-icon>
+                    Rating:
+                    <div>{{recipe.social_rank}}</div>
+
                 </button>
             </ion-col>
             <ion-col>
                 <button ion-button icon-left clear small>
-                    <ion-icon name="text"></ion-icon>
-                    <div>4 Comments</div>
+                    <ion-icon name="md-book"></ion-icon>
+                    <div>{{recipe.publisher}}</div>
                 </button>
             </ion-col>
             <ion-col center text-center>
-                <ion-note>
-                    11h ago
-                </ion-note>
+                <button ion-button icon-left clear item-end (click)='ingredients();'>
+                    <ion-icon name="md-key"></ion-icon>
+                    View Ingredients
+                </button>
             </ion-col>
         </ion-row>
     </ion-card>
