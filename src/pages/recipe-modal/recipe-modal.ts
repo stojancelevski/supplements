@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {IonicPage, NavController, NavParams} from 'ionic-angular';
 
 /**
  * Generated class for the RecipeModalPage page.
@@ -20,7 +20,12 @@ export class RecipeModalPage {
 
   ionViewDidLoad() {
     this.recipe = this.navParams.get('recipe');
-    console.log(this.recipe);
+
+      console.log(this.navParams.get('recipe'));
+      console.log(this.navParams.get('recipe'));
   }
 
+  goToHome(){
+  this.navCtrl.setRoot('HomePage');
+  }
 }

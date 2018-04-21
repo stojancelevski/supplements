@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild,Input } from '@angular/core';
 import { IonicPage, NavController,MenuController, NavParams, AlertController,ToastController,LoadingController } from 'ionic-angular';
 import { AngularFireAuth } from 'angularfire2/auth';
 
@@ -32,7 +32,9 @@ export class RegisterPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad RegisterPage');
       this.menuCtrl.enable(false,'sidemenu');
-
+      setTimeout(() => {
+          this.user.setFocus();
+      },500);
   }
 
   alert(message: string) {

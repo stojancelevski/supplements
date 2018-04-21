@@ -1,4 +1,4 @@
-import { Component,ViewChild } from '@angular/core';
+import { Component,ViewChild, Input } from '@angular/core';
 import {IonicPage, NavController, NavParams, MenuController,AlertController, ToastController, LoadingController} from 'ionic-angular';
 import { AngularFireAuth } from 'angularfire2/auth';
 import {Storage} from "@ionic/storage";
@@ -35,6 +35,9 @@ export class LoginPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
       this.menuCtrl.enable(false,"sidemenu");
+      setTimeout(() => {
+          this.user.setFocus();
+      },500);
   }
 
   alert(message: string) {
