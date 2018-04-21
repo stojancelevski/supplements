@@ -24,7 +24,6 @@ export class SearchIPage {
     search()
     {
         console.log('clicked');
-        this.query = this.query;
         this.navCtrl.push('Supermarket2Page',{ingredients: this.query});
     }
 }
