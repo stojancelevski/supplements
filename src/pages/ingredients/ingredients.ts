@@ -22,6 +22,7 @@ export class IngredientsPage {
 
   ionViewDidLoad() {
       this.menuCtrl.enable(true,'sidemenu');
+      console.log(this.data.ingredients);
 
       console.log('ionViewDidLoad IngredientsPage');
     this.api.getIngredients().then(

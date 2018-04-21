@@ -18,12 +18,16 @@ export class RecipePage {
   recipe: Recipe;
   constructor(public navCtrl: NavController, public navParams: NavParams, public api: ApiProvider, public menuCtrl: MenuController) {
   }
+    ionViewCanEnter()
+    {
+        let myrecipe = this.navParams.get('recipe');
+        this.recipe =myrecipe.recipe;
+    }
+    ionViewDidLoad() {
+        let myrecipe = this.navParams.get('recipe');
+        this.recipe =myrecipe.recipe;
+    }
 
-  ionViewDidLoad() {
-      this.menuCtrl.enable(true,'sidemenu');
-
-    this.recipe = this.navParams.get('recipe');
-  }
   ingredients()
   {
     this.api.recipeId = this.recipe.recipe_id;
