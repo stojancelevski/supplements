@@ -24,9 +24,19 @@
       <p>
         {{recipe.publisher}}
       </p>
+        <ion-item>
+            <div>
+                <span item-left>Rating:</span><br>
+                {{recipe.social_rank}}    <ion-icon name="md-star" style="color:#ffcd35"></ion-icon>
+            </div>
+
+            <button ion-button icon-left clear item-end (click) ='ingredients();' >
+                <ion-icon name="md-key"></ion-icon>
+                View Ingredients
+            </button>
+        </ion-item>
     </ion-card-content>
 </ion-card>
-  <button ion-button block (click) ='ingredients();'>Ingredients</button>
 
 
 </ion-content>
