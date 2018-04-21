@@ -17,13 +17,13 @@ export class RecipeModalPage {
   recipe: Recipe;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
-
-  ionViewDidLoad() {
-    this.recipe = this.navParams.get('recipe');
-
-      console.log(this.navParams.get('recipe'));
-      console.log(this.navParams.get('recipe'));
+  ionViewCanEnter()
+  {
+    let myrecipe = this.navParams.get('recipe');
+    this.recipe =myrecipe.recipe;
   }
+  ionViewDidLoad() {
+    }
 
   goToHome(){
   this.navCtrl.setRoot('HomePage');
