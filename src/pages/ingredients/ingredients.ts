@@ -19,29 +19,6 @@ export class IngredientsPage {
   ingredients: any;
   constructor(public navCtrl: NavController, public navParams: NavParams, public api: ApiProvider,public menuCtrl: MenuController) {
   }
-  ionViewDidLoad()
-  {
-
-<<<<<<< HEAD
-    ionViewCanEnter() {
-      this.menuCtrl.enable(true,'sidemenu');
-
-      console.log('ionViewDidLoad IngredientsPage');
-    this.api.getIngredients().then(
-      data =>{
-        this.data = data;
-        let jsonRecipe = this.data;
-        this.recipe = jsonRecipe.recipe;
-        console.log(this.recipe);
-    },
-      err =>{
-    console.log(err);
-  })
-=======
-    this.menuCtrl.enable(true,'sidemenu');
-    console.log('ionViewDidLoad IngredientsPage');
->>>>>>> fc9a40695b102cdf84a184b3b4dfc4e1f4d21f98
-  }
 
   ionViewCanEnter() {
     let recipe = this.navParams.get('recipe');
