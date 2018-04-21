@@ -101,6 +101,7 @@ export class Supermarket2Page {
     ionViewDidLoad() {
         console.log(this.supermarkets.length);
         this.ingredients = this.navParams.get('ingredients');
+        console.log(this.ingredients);
         this.initMap();
     }
     initMap()
@@ -127,7 +128,6 @@ export class Supermarket2Page {
             for(var i = 0; i<this.supermarkets.length;i++)
             {
                 let marker = 1;
-                console.log(marker);
                 for(var j = 0; j<this.ingredients.length && marker == 1;j++)
                 {
                     let found = 0;
