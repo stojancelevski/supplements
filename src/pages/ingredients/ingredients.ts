@@ -20,9 +20,8 @@ export class IngredientsPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, public api: ApiProvider,public menuCtrl: MenuController) {
   }
 
-  ionViewDidLoad() {
+    ionViewCanEnter() {
       this.menuCtrl.enable(true,'sidemenu');
-      console.log(this.data.ingredients);
 
       console.log('ionViewDidLoad IngredientsPage');
     this.api.getIngredients().then(
