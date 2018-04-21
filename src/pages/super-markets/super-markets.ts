@@ -114,6 +114,15 @@ export class SuperMarketsPage {
           zoom: 15,
         }
       this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
+      let locationMarker = new google.maps.Marker({
+        position: new google.maps.LatLng(resp.coords.latitude,resp.coords.longitude),
+        title: 'My location',
+        icon: {
+          path: google.maps.SymbolPath.CIRCLE,
+          scale: 5
+        },
+        map: this.map
+      })
       }).then(()=>{
         for(var i = 0; i<this.supermarkets.length;i++)
         {
@@ -141,8 +150,8 @@ export class SuperMarketsPage {
           {
             let mymarker = new google.maps.Marker({
               position:  new google.maps.LatLng(this.supermarkets[i].lat,this.supermarkets[i].lon),
-              map: this.map,
-              label: this.supermarkets[i].name
+              title: this.supermarkets[i].name,
+              map: this.map
             });
           }
         }
