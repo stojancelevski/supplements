@@ -141,7 +141,8 @@ export class SuperMarketsPage {
           {
             let mymarker = new google.maps.Marker({
               position:  new google.maps.LatLng(this.supermarkets[i].lat,this.supermarkets[i].lon),
-              map: this.map
+              map: this.map,
+              label: this.supermarkets[i].name
             });
           }
         }
