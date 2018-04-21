@@ -1,3 +1,22 @@
 page-search {
+  .card-background-page {
 
+    ion-card {
+      position: relative;
+      text-align: center;
+    }
+
+    .card-title {
+      background-color: rgba(151, 154, 160, 0.5);
+      font-size: 20px;
+      position: absolute;
+      top: 36%;
+      width: 100%;
+      text-shadow: 2px 2px #000000;
+      color: #fff;
+    }
+
+
+
+  }
 }

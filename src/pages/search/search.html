@@ -6,22 +6,44 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>search</ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title>search</ion-title>
+    </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
-  <ion-grid>
-    <ion-row>
-        <ion-col *ngFor="let item of recipes" col-6 >
-          <ion-item  (click) = "getRecipe(item);">
-              <img src="{{item.image_url}}"><br>
-              {{item.title}}
-          </ion-item>
-        </ion-col>
-    </ion-row>
-  </ion-grid>
+<ion-content padding class="card-background-page">
+    <ion-grid>
+            <ion-row  *ngFor="let item of recipes">
+                    <ion-item (click)="getRecipe(item);">
+                        <ion-card>
+                            <img src="{{item.image_url}}"><br>
+                            <div class="card-title" text-wrap style="font-size: 20px">
+                                {{item.title}}
+                            </div>
+                        </ion-card>
+                    </ion-item>
+               <!-- <ion-row>
+                    <ion-item (click)="getRecipe(item);">
+                        <ion-card>
+                            <img src="assets/imgs/slika.jpg"><br>
+                            <div class="card-title" text-wrap>
+                                asd
+                            </div>
+                        </ion-card>
+                    </ion-item>
+                </ion-row>
+                <ion-row>
+                    <ion-item (click)="getRecipe(item);">
+                        <ion-card>
+                            <img src="assets/imgs/slika.jpg"><br>
+                            <div class="card-title" text-wrap>
+                                asd
+                            </div>
+                        </ion-card>
+                    </ion-item>
+                </ion-row> -->
+            </ion-row>
+    </ion-grid>
 </ion-content>

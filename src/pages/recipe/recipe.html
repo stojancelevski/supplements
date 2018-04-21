@@ -15,7 +15,17 @@
 
 <ion-content padding>
   
-
+<ion-card  *ngFor="let item of recipes">
+    <img src="{{item.image_url}}"/>
+    <ion-card-content>
+      <ion-card-title>
+        {{item.title}}
+      </ion-card-title>
+      <p>
+        {{item.publisher}}
+      </p>
+    </ion-card-content>
+</ion-card>
   <button ion-button block (click) ='ingredients();'>Ingredients</button>
 
 

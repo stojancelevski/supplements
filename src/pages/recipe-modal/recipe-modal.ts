@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {IonicPage, NavController, NavParams} from 'ionic-angular';
 
 /**
@@ -10,22 +10,30 @@ import {IonicPage, NavController, NavParams} from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-recipe-modal',
-  templateUrl: 'recipe-modal.html',
+    selector: 'page-recipe-modal',
+    templateUrl: 'recipe-modal.html',
 })
 export class RecipeModalPage {
-  recipe: Recipe;
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
+    recipe: Recipe;
 
-  ionViewDidLoad() {
-    this.recipe = this.navParams.get('recipe');
+    constructor(public navCtrl: NavController, public navParams: NavParams) {
+        this.recipe = this.navParams.get('recipe');
 
-      console.log(this.navParams.get('recipe'));
-      console.log(this.navParams.get('recipe'));
-  }
+        console.log('nla', this.navParams.get('recipe'));
+        console.log(this.recipe.title);
+    }
 
-  goToHome(){
-  this.navCtrl.setRoot('HomePage');
-  }
+
+    /* ionViewDidLoad() {
+         console.log("load");
+
+         this.recipe = this.navParams.get('recipe');
+
+       console.log('nla', this.navParams.get('recipe'));
+       console.log(this.navParams.get('recipe'));
+   }*/
+
+    goToHome() {
+        this.navCtrl.setRoot('HomePage');
+    }
 }
