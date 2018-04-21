@@ -1,29 +1,29 @@
 <ion-header>
-  <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>Home</ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>Home</ion-title>
+    </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <ion-item>
-    <ion-label fixed>Enter your query</ion-label>
-    <ion-input [(ngModel)] = "query" name = "query" type="text" value=""></ion-input>
-  </ion-item>
-  <ion-item>
-    <button ion-button block (click) ='search();'>Search</button>
-  </ion-item>
-  <ion-grid>
-    <ion-row>
-        <ion-col *ngFor="let item of lastFive" col-6 >
-          {{item.recipe.title}}
-          <ion-item (click) = "showModal(item);">
-            {{item.title}}
-          </ion-item>
-        </ion-col>
+    <ion-item>
+        <ion-label fixed>Enter your query</ion-label>
+        <ion-input [(ngModel)]="query" name="query" type="text" value=""></ion-input>
+    </ion-item>
+    <ion-item>
+        <button ion-button block (click)='search();'>Search</button>
+    </ion-item>
 
-    </ion-row>
-  </ion-grid>
+
+    <div *ngFor="let item of lastFive">
+
+        <button ion-item block text-wrap>{{item.recipe.title}}</button>
+        <div (click)="showModal(item);">
+        </div>
+
+    </div>
+
+
 </ion-content>
