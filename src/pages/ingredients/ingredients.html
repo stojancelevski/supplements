@@ -14,8 +14,8 @@
 
 
 <ion-content padding>
-<ol *ngFor="let item of recipe_id">
-  <li>{{item.ingredients}}</li>
+<ol *ngFor="let item of ingredients">
+  <li>{{item}}</li>
 </ol>
   <button ion-button block (click) = "showOnMap()">Find shops</button>
 </ion-content>

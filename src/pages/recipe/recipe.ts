@@ -21,17 +21,24 @@ export class RecipePage {
     ionViewCanEnter()
     {
         let myrecipe = this.navParams.get('recipe');
-        this.recipe =myrecipe.recipe;
+        this.recipe =myrecipe;
     }
     ionViewDidLoad() {
-        let myrecipe = this.navParams.get('recipe');
-        this.recipe =myrecipe.recipe;
+        console.log(this.recipe);
     }
 
   ingredients()
   {
     this.api.recipeId = this.recipe.recipe_id;
-    this.navCtrl.push('IngredientsPage');
+    this.api.getIngredients().then(data => {
+      let recipeWithIngredients = data;
+      this.navCtrl.push('IngredientsPage',{recipe: recipeWithIngredients});
+    },
+    err => {
+      console.log(err);
+    }
+  )
+
   }
 
 }

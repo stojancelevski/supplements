@@ -15,14 +15,14 @@
 
 <ion-content padding>
   
-<ion-card  *ngFor="let item of recipes">
-    <img src="{{item.image_url}}"/>
+<ion-card>
+    <img src="{{recipe.image_url}}"/>
     <ion-card-content>
       <ion-card-title>
-        {{item.title}}
+        {{recipe.title}}
       </ion-card-title>
       <p>
-        {{item.publisher}}
+        {{recipe.publisher}}
       </p>
     </ion-card-content>
 </ion-card>
