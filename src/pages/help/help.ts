@@ -20,7 +20,7 @@ export class HelpPage {
     showAlert1() {
         let alert = this.alertCtrl.create({
             title: 'Where to start?',
-            subTitle: 'Your friend, Obi wan Kenobi, just accepted your friend request!',
+            subTitle: 'After registering you will need to sign in with your credentials, and then you can easily search a recipe.',
             buttons: ['OK']
         });
         alert.present();
@@ -28,7 +28,7 @@ export class HelpPage {
     showAlert2() {
         let alert = this.alertCtrl.create({
             title: 'How to search for recipes containing my ingredients?',
-            subTitle: 'Your friend, Obi wan Kenobi, just accepted your friend request!',
+            subTitle: 'Use the search page from the side menu, and in the input type the ingredient you want.',
             buttons: ['OK']
         });
         alert.present();
@@ -36,7 +36,7 @@ export class HelpPage {
     showAlert3() {
         let alert = this.alertCtrl.create({
             title: 'Where can I buy the ingredients I need?',
-            subTitle: 'Your friend, Obi wan Kenobi, just accepted your friend request!',
+            subTitle: 'After you search for the ingredient, you will be shown the nearest market around you that offer that same ingredient. ',
             buttons: ['OK']
         });
         alert.present();
