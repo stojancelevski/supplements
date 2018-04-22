@@ -8,8 +8,8 @@
 </ion-header>
 
 <ion-content padding class="myBG">
-    <ion-item style="background-color: rgba(255, 255, 255, 0.5);color: #ffffff;">
-        <ion-label floating style="color: #ffffff;">Enter Your desired ingredient</ion-label>
+    <ion-item style="background-color: rgba(255, 255, 255, 0.5);">
+        <ion-label floating style="color: #000000;">Enter Your desired ingredient</ion-label>
         <ion-input #Query [(ngModel)]="query" name="query" type="text" value=""></ion-input>
     </ion-item>
     <ion-item style="background-color: rgba(255, 255, 255, 0.5);">
@@ -18,12 +18,14 @@
 
 
     <ion-item no-lines style="background-color: rgba(255, 255, 255, 0);text-align: center;">
-        <ion-card-title style="color: white">
+        <ion-card-title style="color: black">
             Last searched recipes
         </ion-card-title>
         <br>
         <div *ngFor="let item of lastFive">
-            <button ion-item  text-wrap (click)="showModal(item);" style="background-color: rgba(255, 255, 255, 0.5);color: white"><b>{{item.recipe.title}}</b></button>
+            <button ion-item text-wrap (click)="showModal(item);"
+                    style="background-color: rgba(255, 255, 255, 0.5);color: black;text-align: center"><b>{{item.recipe.title}}</b>
+            </button>
         </div>
     </ion-item>
 
