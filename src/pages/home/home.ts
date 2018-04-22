@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, MenuController, ModalController, LoadingController, List } from 'ionic-angular';
 import { ApiProvider } from './../../providers/api/api';
 import {Storage} from "@ionic/storage";
+
 /**
  * Generated class for the HomePage page.
  *
@@ -18,10 +19,13 @@ export class HomePage {
   query: string;
   lastFive: Array<Recipe>;
   temp: any;
-  constructor(public navCtrl: NavController, public navParams: NavParams,
-    public api: ApiProvider, public menuCtrl: MenuController,
-  public storage: Storage, public modalCtrl: ModalController,
-  public loadingCtrl: LoadingController) 
+  constructor(public navCtrl: NavController,
+              public navParams: NavParams,
+              public api: ApiProvider,
+              public menuCtrl: MenuController,
+              public storage: Storage,
+              public modalCtrl: ModalController,
+              public loadingCtrl: LoadingController)
   {
   }
 
@@ -29,6 +33,7 @@ export class HomePage {
     this.menuCtrl.enable(true,'sidemenu');
     this.getLastRecipes();
     console.log('ionViewDidLoad HomePage');
+
   }
   search()
   {

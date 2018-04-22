@@ -7,17 +7,25 @@
     </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-    <ion-item>
-        <ion-label fixed>Enter your query</ion-label>
-        <ion-input [(ngModel)]="query" name="query" type="text" value=""></ion-input>
+<ion-content padding class="myBG">
+    <ion-item style="background-color: rgba(255, 255, 255, 0.5);color: #ffffff;">
+        <ion-label floating style="color: #ffffff;">Enter Your desired ingredient</ion-label>
+        <ion-input #Query [(ngModel)]="query" name="query" type="text" value=""></ion-input>
     </ion-item>
-    <ion-item>
-        <button ion-button block (click)='search();'>Search</button>
+    <ion-item style="background-color: rgba(255, 255, 255, 0.5);">
+        <button ion-button block class="myButton" (click)='search();'>Search</button>
     </ion-item>
-    <div *ngFor="let item of lastFive">
-        <button ion-item  text-wrap (click)="showModal(item);">{{item.recipe.title}}</button>
-    </div>
+
+
+    <ion-item no-lines style="background-color: rgba(255, 255, 255, 0);text-align: center;">
+        <ion-card-title style="color: white">
+            Last searched recipes
+        </ion-card-title>
+        <br>
+        <div *ngFor="let item of lastFive">
+            <button ion-item  text-wrap (click)="showModal(item);" style="background-color: rgba(255, 255, 255, 0.5);color: white"><b>{{item.recipe.title}}</b></button>
+        </div>
+    </ion-item>
 
 
 </ion-content>

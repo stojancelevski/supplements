@@ -23,6 +23,8 @@ export class RecipeModalPage {
     {
         let myrecipe = this.navParams.get('recipe');
         this.recipe =myrecipe.recipe;
+        this.recipe.social_rank = this.recipe.social_rank.toFixed(2);
+
     }
     ionViewDidLoad() {
 

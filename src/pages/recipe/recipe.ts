@@ -23,6 +23,7 @@ export class RecipePage {
       this.menuCtrl.enable(true,'sidemenu');
 
     this.recipe = this.navParams.get('recipe');
+    this.recipe.social_rank = this.recipe.social_rank.toFixed(2);
   }
   ingredients()
   {
