@@ -6,8 +6,17 @@
 -->
 
 
-
-<ion-content padding>
-<button ion-button block (click)="login()">Login</button>
-<button ion-button block (click)="register()">Register</button>
+<ion-content padding class="myBG"><br><br><br>
+    <img src="assets/imgs/TQ_4_grey.png" alt="">
+    <br><br><br><br><br><br><br>
+    <ion-grid>
+        <ion-row>
+            <ion-col>
+                <button ion-button block (click)="login()"  class="myButton">Login</button>
+            </ion-col>
+            <ion-col>
+                <button ion-button block (click)="register()" class="myButton2">Register</button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
 </ion-content>
