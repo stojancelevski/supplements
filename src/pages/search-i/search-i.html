@@ -16,14 +16,15 @@
 </ion-header>
 
 
-<ion-content padding>
-  <ion-item>
-    <ion-label fixed>Enter your query</ion-label>
+<ion-content class="myBG">
+  <ion-item style="background-color: rgba(255, 255, 255, 0.5);">
+    <ion-label floating style="color: black">Enter your query</ion-label>
     <ion-input [(ngModel)]="query" name="query" type="text" value=""></ion-input>
   </ion-item>
-  <ion-item>
-    <button ion-button block (click)='search();'>Search</button>
+  <ion-item style="background-color: rgba(255, 255, 255, 0.5);">
+    <button ion-button block (click)='search();'>Show on Map</button>
   </ion-item>
-  <img src="assets/imgs/TQ_4.png" alt="">
+  <br><br>
+  <img src="assets/imgs/TQ_4_grey.png" alt="">
 
 </ion-content>
