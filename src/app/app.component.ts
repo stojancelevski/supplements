@@ -13,7 +13,7 @@ export class MyApp {
 
     rootPage: any = 'FirstPage';
 
-    pages: Array<{ title: string, component: any }>;
+    pages: Array<{ title: string, icon: string, component: any }>;
 
     constructor(public platform: Platform,
                 public statusBar: StatusBar,
@@ -24,14 +24,15 @@ export class MyApp {
 
         // used for an example of ngFor and navigation
         this.pages = [
-                        {title: 'Logout', component: 'FirstPage'},
+            {title: 'Home', icon: 'assets/imgs/icons/icon_home.png', component: 'HomePage'},
+            {title: 'Search',icon:'assets/imgs/icons/icon_search.png', component: 'SearchIPage'},
+            {title: 'Maps', icon:'assets/imgs/icons/icon_maps.png',component: 'MapsPage'},
+            {title: 'About', icon: 'assets/imgs/icons/icon_about.png', component: 'AboutPage'},
+            {title: 'Help', icon: 'assets/imgs/icons/icon_help.png', component: 'HelpPage'},
+            {title: 'Contact', icon: 'assets/imgs/icons/icon_contact.png', component: 'ContactPage'},
+            {title: 'Logout', icon:'assets/imgs/icons/icon_logout.png', component: 'FirstPage'},
         ];
-        this.pages2 = {
-            homePage: 'HomePage',
-            searchPage: 'SearchIPage',
-            mapsPage: 'MapsPage',
-            logout:'FirstPage'
-        }
+
         storage.get('testApp.userId').then((val) => {
 
             if (val != 0 && val != null) {
