@@ -9,8 +9,8 @@ import { Injectable } from '@angular/core';
 */
 @Injectable()
 export class ApiProvider {
-  url = "http://food2fork.com/api/search?key=4b8257c0537b013ae4dd519a7186d1c7&q=";
-  recipeurl = "http://food2fork.com/api/get?key=4b8257c0537b013ae4dd519a7186d1c7&rId=";
+  url = "http://food2fork.com/api/search?key=6273e129d5d1fe0257e377fa16a4db58&q=";
+  recipeurl = "http://food2fork.com/api/get?key=6273e129d5d1fe0257e377fa16a4db58&rId=";
   query: string; 
   recipeId: string;
   constructor(public http: HttpClient) {

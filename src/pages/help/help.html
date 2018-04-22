@@ -16,7 +16,20 @@
 </ion-header>
 
 
-<ion-content padding>
-  <button ion-button block (click)="showAlert1();"> Where to start?</button>
+<ion-content padding class="myBG">
+  <img src="assets/imgs/TQ_4_grey.png" alt="">
+  <br><br><br>
+  <ion-grid>
+    <ion-row>
+      <button ion-button block class="myButton2" (click)="showAlert1();" text-wrap> Where to start?</button>
+
+    </ion-row>
+    <ion-row>
+      <button ion-button block class="myButton3"(click)="showAlert2();" text-wrap> How to search for recipes containing my ingredients?</button>
+    </ion-row>
+    <ion-row>
+      <button ion-button block class="myButton2"(click)="showAlert3();" text-wrap>  Where can I buy the ingredients I need?</button>
+    </ion-row>
+  </ion-grid>
 
 </ion-content>
