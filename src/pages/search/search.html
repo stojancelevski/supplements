@@ -16,11 +16,11 @@
 </ion-header>
 
 
-<ion-content padding class="card-background-page">
-    <ion-grid>
-            <ion-row  *ngFor="let item of recipes">
-                    <ion-item (click)="getRecipe(item);">
-                        <ion-card>
+<ion-content padding class="card-background-page myBG">
+    <ion-grid style="background-color: rgba(255, 255, 255, 0);">
+            <ion-row  *ngFor="let item of recipes" style="background-color: rgba(255, 255, 255, 0);">
+                    <ion-item no-lines (click)="getRecipe(item);" style="background-color: rgba(255, 255, 255, 0);">
+                        <ion-card style="background-color: rgba(151, 154, 160, 0.8);">
                             <img src="{{item.image_url}}"><br>
                             <div class="card-title" text-wrap style="font-size: 20px">
                                 {{item.title}}

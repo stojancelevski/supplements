@@ -7,16 +7,18 @@ page-search {
     }
 
     .card-title {
-      background-color: rgba(151, 154, 160, 0.5);
+
       font-size: 20px;
-      position: absolute;
-      bottom: 10%;
+
       width: 100%;
-      text-shadow: 2px 2px #000000;
-      color: #fff;
+      color: #000000;
     }
 
 
 
+  }
+  .myBG{
+    background-image: url('../assets/imgs/TQ_background.png');
+    background-size: cover   ;
   }
 }
