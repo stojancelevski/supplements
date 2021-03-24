@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="io.ionic.starter" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>MyApp</name>
-    <description>An awesome Ionic/Cordova app.</description>
+<widget id="fitgym.fitgym" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Fit Gym</name>
+    <description>App for suplements</description>
     <author email="hi@ionicframework" href="http://ionicframework.com/">Ionic Framework Team</author>
     <content src="index.html" />
     <access origin="*" />
@@ -85,9 +85,9 @@
     <plugin name="cordova-plugin-firebase" spec="^1.0.0" />
     <plugin name="uk.co.workingedge.phonegap.plugin.launchnavigator" spec="^4.2.0" />
     <plugin name="cordova-sqlite-storage" spec="^2.3.1" />
+    <plugin name="mx.ferreyra.callnumber" spec="~0.0.2" />
     <plugin name="cordova-plugin-geolocation" spec="^4.0.1">
         <variable name="GEOLOCATION_USAGE_DESCRIPTION" value="To locate you" />
     </plugin>
-    <engine name="android" spec="^7.0.0" />
-    <plugin name="mx.ferreyra.callnumber" spec="~0.0.2" />
+    <engine name="android" spec="7.0.0" />
 </widget>

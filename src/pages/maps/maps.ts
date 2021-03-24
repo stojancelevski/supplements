@@ -43,19 +43,29 @@ export class MapsPage {
     })
       }).then(()=>{
         let marker = new google.maps.Marker({
-          position:  new google.maps.LatLng('41.0846','20.7972'),
-          title: 'Codefest Market 1',
+          position:  new google.maps.LatLng('41.179413996149606','20.678191689549294'),
+          title: 'M-Fitness Center',
           map: this.map
         });
         let marker2 = new google.maps.Marker({
-          position:  new google.maps.LatLng('41.1131','20.8025'),
-          title: 'Codefest Market 2',
+          position:  new google.maps.LatLng('41.177912015014726','20.677730349598733'),
+          title: 'Bujar',
           map: this.map
         });
         let marker3 = new google.maps.Marker({
-          position:  new google.maps.LatLng('41.1097','20.8151'),
-          title: 'Codefest Market 3',
+          position:  new google.maps.LatLng('41.17774243433562','20.67407181650242'),
+          title: 'Pazar',
           map: this.map
+        });
+        let marker4 = new google.maps.Marker({
+            position:  new google.maps.LatLng('41.17680569505442','20.677966383992043'),
+            title: 'Fitnes Vita',
+            map: this.map
+        });
+        let marker5 = new google.maps.Marker({
+            position:  new google.maps.LatLng('41.18133261680457','20.683727768956032'),
+            title: 'Risto Krle',
+            map: this.map
         });
       });
       

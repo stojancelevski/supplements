@@ -11,7 +11,7 @@ import {Storage} from "@ionic/storage";
 export class MyApp {
     @ViewChild(Nav) nav: Nav;
 
-    rootPage: any = 'FirstPage';
+    rootPage: any = 'LoginPage';
 
     pages: Array<{ title: string, icon: string, component: any }>;
 
@@ -25,12 +25,14 @@ export class MyApp {
         // used for an example of ngFor and navigation
         this.pages = [
             {title: 'Home', icon: 'assets/imgs/icons/icon_home.png', component: 'HomePage'},
-            {title: 'Search',icon:'assets/imgs/icons/icon_search.png', component: 'SearchIPage'},
+            {title: 'BCAA',icon:'assets/imgs/icons/icon_about.png', component: 'BcaaPage'},
+            {title: 'Creatines',icon:'assets/imgs/icons/icon_about.png', component: 'CreatinesPage'},
+            {title: 'Fat Burners', icon: 'assets/imgs/icons/icon_about.png', component: 'FatburnersPage'},
+            {title: 'Pre Workouts', icon: 'assets/imgs/icons/icon_about.png', component: 'PreworkoutsPage'},
+            {title: 'Proteins', icon: 'assets/imgs/icons/icon_about.png', component: 'ProteinsPage'},
             {title: 'Maps', icon:'assets/imgs/icons/icon_maps.png',component: 'MapsPage'},
-            {title: 'About', icon: 'assets/imgs/icons/icon_about.png', component: 'AboutPage'},
-            {title: 'Help', icon: 'assets/imgs/icons/icon_help.png', component: 'HelpPage'},
             {title: 'Contact', icon: 'assets/imgs/icons/icon_contact.png', component: 'ContactPage'},
-            {title: 'Logout', icon:'assets/imgs/icons/icon_logout.png', component: 'FirstPage'},
+            {title: 'Logout', icon:'assets/imgs/icons/icon_logout.png', component: 'LoginPage'},
         ];
 
         storage.get('testApp.userId').then((val) => {
@@ -39,7 +41,7 @@ export class MyApp {
                 this.rootPage = 'HomePage';
             }
             else {
-                this.rootPage = 'FirstPage';
+                this.rootPage = 'LoginPage';
             }
         });
     }
@@ -67,7 +69,7 @@ export class MyApp {
         if (page.title == 'Logout') {
             this.storage.set('testApp.userId', 0);
             this.displayToast('Sucessfully Logged Out!!!')
-            this.nav.setRoot('FirstPage');
+            this.nav.setRoot('LoginPage');
         }
         else {
             this.nav.setRoot(page.component);

@@ -1,13 +1,13 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="heade">
     <ion-title>
       Login
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding class="myBG">
-  <img src="assets/imgs/TQ_4_grey.png" alt="">
+<ion-content padding text-center>
+  <img src="assets/imgs/icon.png" width="50%" height="30%">
 
   <ion-list>
 
@@ -24,7 +24,8 @@
   </ion-list>
 
   <div padding>
-    <button block ion-button class="myButton" (click)="signInUser()" item-left>Sign In</button>
+    <button block ion-button class="myButton" (click)="signInUser()" item-left>Log In</button>
+    <button block ion-button class="myButton2" (click)="register()" item-left>Register</button>
   </div>
 
 </ion-content>

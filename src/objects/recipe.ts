@@ -9,3 +9,4 @@ interface Recipe{
     publisher_url: string;
     ingredients: Array<string>;
 }
+
